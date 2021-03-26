@@ -11,8 +11,7 @@ Block::Block(Tx tx, size_t prev_hash) {
   this->tx = tx;
   this->prev_hash = prev_hash;
 
-  std::string tx_detail = tx.get_from() + tx.get_to() +
-                          std::to_string(tx.get_amnt()) + tx.get_time();
+  std::string tx_detail = tx.get_time() + std::to_string(prev_hash);
   this->hash = std::hash<std::string>{}(tx_detail);
 }
 
