@@ -8,7 +8,7 @@ int main() {
   std::string from, to, amnt;
   std::vector<Block> chain;
 
-  int batch_size;
+  unsigned int batch_size;
 
   std::cout << "Batch Size: ";
   std::cin >> batch_size;
