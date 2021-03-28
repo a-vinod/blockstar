@@ -8,7 +8,7 @@ To run process a batch of transactions on a local machine, build the C++ program
 
 ```bash
 > make all
-> ./blockchain_pusher
+> ./bin/blockchain_pusher
 ```
 
 First, enter the transaction batch size.
