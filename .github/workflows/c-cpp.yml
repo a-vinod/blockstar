@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install-build-essentials
+      run: apt-get install build-essentials
+    - name: install-sql-libs-7v5
+      run: apt-get install libmysqlcppconn7v5
+    - name: install-sql-libs-dev
+      run: apt-get install libmysqlcppconn-dev
+    - name: cd-and-make
+      run: cd blockchain && make all
