@@ -1,5 +1,5 @@
 # Blockstar
-A blockchain-secured trusted review system  that analyzes the quality of unverified reviews with NLP.
+A blockchain-secured trusted review system that analyzes the quality of unverified reviews with NLP.
 
 ## Background
 
