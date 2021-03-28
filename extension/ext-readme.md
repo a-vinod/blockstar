@@ -15,6 +15,4 @@ This is a extension for Chromium based browsers that will analyze the reviews of
 
 - Navigate to the folder you cloned to and open it.
 
-- A pop-up will then ask you for your name
-
 That's it!
