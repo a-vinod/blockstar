@@ -1,24 +1,21 @@
-OBJS	= blockchain_push.o block.o transaction.o
-SOURCE	= blockchain_push.cpp block.cpp transaction.cpp
-HEADER	= block.h transaction.h
+SRC_DIR = src
+BIN_DIR = bin
+BUILD_DIR = build
+
+SOURCES = $(SRC_DIR)/blockchain_push.cpp $(SRC_DIR)/block.cpp $(SRC_DIR)/transaction.cpp
+OBJS = $(BUILD_DIR)/blockchain_push.o $(BUILD_DIR)/block.o $(BUILD_DIR)/transaction.o
+
 OUT	= blockchain_pusher
-CC	 = g++
-FLAGS	 = -g -c -Wall
-LFLAGS	 = 
+CC = g++
+CXXFLAGS = -g -c -Wall -Iinclude
+LFLAGS = -Llib -lmysqlcppconn
 
 all: $(OBJS)
-	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
+	$(CC) -g $(OBJS) -o $(BIN_DIR)/$(OUT) $(LFLAGS)
 
-blockchain_push.o: blockchain_push.cpp
-	$(CC) $(FLAGS) blockchain_push.cpp 
-
-block.o: block.cpp
-	$(CC) $(FLAGS) block.cpp 
-
-transaction.o: transaction.cpp
-	$(CC) $(FLAGS) transaction.cpp 
-
+$(OBJS): $(BUILD_DIR)/%.o : $(SRC_DIR)/%.cpp
+	$(CC) $(CXXFLAGS) $< -o $@
 
 clean:
-	rm -f $(OBJS) $(OUT)
+	rm -f $(OBJS) $(BIN_DIR)/$(OUT)
 
