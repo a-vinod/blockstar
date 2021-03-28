@@ -17,3 +17,7 @@ That's it!
 ## Usage
 - When on an Amazon.com product page, click on the extension icon.
 - The extension will automatically make an API call to get the review trustworthiness score and the review report card.
+
+## Example
+
+![A screenshot of the extension showing a score](img-example.png)
