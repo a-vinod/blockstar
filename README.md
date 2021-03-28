@@ -1,3 +1,5 @@
+![CI Badge](https://github.com/a-vinod/blockstar/actions/workflows/c-cpp.yml/badge.svg)
+
 # Blockstar
 A blockchain-secured trusted review system that analyzes the quality of unverified reviews with NLP.
 
