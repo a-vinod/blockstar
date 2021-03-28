@@ -6,7 +6,7 @@ Blockstar implements a custom blockchain that stores reviews using cryptographic
 
 There are a few dependencies for this program to run. Namely:
 
-[MySQL Coonnector](https://dev.mysql.com/doc/connector-cpp/8.0/en/connector-cpp-introduction.html)
+[MySQL Connector](https://dev.mysql.com/doc/connector-cpp/8.0/en/connector-cpp-introduction.html)
 ```bash
 apt-get install libmysqlcppconn7 # libmysqlcppconn7v5 for ubuntu
 apt-get install libmysqlcppconn-dev
