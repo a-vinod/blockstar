@@ -14,10 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install-build-essentials
-      run: apt-get install build-essentials
+      run: sudo apt-get install build-essentials
     - name: install-sql-libs-7v5
-      run: apt-get install libmysqlcppconn7v5
+      run: sudo apt-get install libmysqlcppconn7v5
     - name: install-sql-libs-dev
-      run: apt-get install libmysqlcppconn-dev
+      run: sudo apt-get install libmysqlcppconn-dev
     - name: cd-and-make
       run: cd blockchain && make all
