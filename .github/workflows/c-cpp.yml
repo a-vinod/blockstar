@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: update-upgrade
+      run: sudo apt-get update && sudo apt-get upgrade -y
     - name: install-build-essentials
       run: sudo apt-get install build-essentials
     - name: install-sql-libs-7v5
