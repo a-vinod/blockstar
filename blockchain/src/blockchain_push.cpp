@@ -1,10 +1,4 @@
 // Blockchain.cpp
-#include "../include/cppconn/driver.h"
-#include "../include/cppconn/exception.h"
-#include "../include/cppconn/prepared_statement.h"
-#include "../include/cppconn/resultset.h"
-#include "../include/cppconn/statement.h"
-#include "../include/mysql_connection.h"
 #include <stdlib.h>
 
 #include <iostream>
@@ -12,6 +6,12 @@
 #include <vector>
 
 #include "../include/block.h"
+#include "../include/cppconn/driver.h"
+#include "../include/cppconn/exception.h"
+#include "../include/cppconn/prepared_statement.h"
+#include "../include/cppconn/resultset.h"
+#include "../include/cppconn/statement.h"
+#include "../include/mysql_connection.h"
 
 int main() {
   sql::Driver *driver;
@@ -56,7 +56,6 @@ int main() {
       i++;
       max_idx = res->getInt(1);
     }
-    std::cout << max_idx << std::endl;
 
   } catch (sql::SQLException &e) {
     std::cout << "# ERR: SQLException in " << __FILE__;
@@ -109,11 +108,10 @@ int main() {
   std::string insert;
   for (auto i = chain.begin(); i != chain.end(); ++i) {
     max_idx++;
-    data = "(" + std::to_string(max_idx) + ",'" + i->get_tx().get_from() +
-           "','" + i->get_tx().get_to() + "'," +
-           std::to_string(i->get_tx().get_amnt()) + ",'" +
-           std::to_string(i->get_hash()) + "','" +
-           std::to_string(i->get_prev_hash()) + "')";
+    data = i->get_tx().get_from() + "," + i->get_tx().get_to() + "," +
+           std::to_string(i->get_tx().get_amnt()) + "," +
+           std::to_string(i->get_hash()) + "," +
+           std::to_string(i->get_prev_hash());
 
     std::cout << data << std::endl;
 
