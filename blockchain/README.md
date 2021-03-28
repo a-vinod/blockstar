@@ -11,7 +11,7 @@ To run process a batch of transactions on a local machine, build the C++ program
 > ./bin/blockchain_pusher
 ```
 
-First, enter the transaction batch size.
+Enter the GCP password and transaction batch size.
 
 ```bash
 Batch Size: 2
